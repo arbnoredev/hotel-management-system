@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoldBase Hotel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <text x='50%' y='60%' font-size='60' text-anchor='middle' fill='%23D4AF37' font-family='Arial' font-weight='bold'>GB</text>
+</svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/book.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container header-content">
+        <!-- Logo -->
+        <a class="logo" href="index.html" aria-label="GoldBase Hotel Home">
+          <img src="assets/images/logo.png" alt="GoldBase Hotel" />
+        </a>
+
+        <!-- Navigation -->
+        <!-- Navigation -->
+        <div class="nav-wrap">
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+          <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav class="nav" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="book.html" class="active">Book Now</a>
+            <a href="index.html#rooms">Rooms</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="booking-section">
+        <!-- Title -->
+        <div class="booking-header">
+          <h1>Book Your Stay</h1>
+          <p>Please fill in the form below to reserve your room.</p>
+        </div>
+
+        <div class="booking-layout">
+          <!-- LEFT SIDE (Steps + Form) -->
+          <div class="booking-left">
+            <!-- Steps -->
+            <div class="booking-steps">
+              <div class="step"><span>1</span> Choose Dates</div>
+              <div class="step"><span>2</span> Guest Details</div>
+              <div class="step"><span>3</span> Confirm Booking</div>
+            </div>
+
+            <div id="formMsg" style="margin: 10px 0 16px"></div>
+            <!-- Form -->
+            <form class="booking-form" novalidate>
+              <div class="row">
+                <div class="field">
+                  <label for="checkin">Check-in</label>
+                  <input
+                    type="text"
+                    id="checkin"
+                    name="checkin"
+                    placeholder="Select check-in date"
+                    required
+                    readonly
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="checkout">Check-out</label>
+                  <input
+                    type="text"
+                    id="checkout"
+                    name="checkout"
+                    placeholder="Select check-out date"
+                    required
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="adults">Adults</label>
+                  <select id="adults" name="adults">
+                    <option value="1">1 Adult</option>
+                    <option value="2">2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="children">Children</label>
+                  <select id="children" name="children">
+                    <option value="0">0 Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field full">
+                  <label for="room">Room Type</label>
+                  <select id="room" name="room">
+                    <option value="standard">Double Room</option>
+                    <option value="deluxe">Twin Room</option>
+                    <option value="suite">Triple Room</option>
+                  </select>
+
+                  <div id="availabilityNote" class="availability-note"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field full">
+                  <label for="fullname">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field full">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field full">
+                  <label for="phone">Phone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+383 44 000 000"
+                  />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field full">
+                  <label for="notes">Special Requests</label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    rows="4"
+                    placeholder="Any special requests..."
+                  ></textarea>
+                </div>
+                <div id="notesInfo" class="notes-info"></div>
+              </div>
+
+              <!-- ✅ Honeypot (ANTI-SPAM) – vendoset këtu -->
+              <div
+                style="
+                  position: absolute;
+                  left: -9999px;
+                  height: 0;
+                  overflow: hidden;
+                "
+              >
+                <label for="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  autocomplete="off"
+                  tabindex="-1"
+                />
+              </div>
+
+              <button type="submit" class="btn-book">Book Now</button>
+            </form>
+          </div>
+
+          <!-- RIGHT SIDE (Info Card) -->
+          <aside class="booking-right">
+            <h3>Why book with us?</h3>
+
+            <ul class="booking-benefits">
+              <li>Best price guaranteed</li>
+              <li>Free cancellation options</li>
+              <li>No hidden fees</li>
+              <li>24/7 support</li>
+            </ul>
+
+            <div class="booking-contact">
+              <p><strong>Need help?</strong></p>
+              <p>Call: +383 49 156 178</p>
+              <p>Email: gold.hotelpz@outlook.com</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Left: Logo + Social -->
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="assets/images/logo.png"
+            alt="GoldBase Hotel"
+          />
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Explore -->
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="book.html">Book Now</a>
+          <a href="index.html#rooms">Our Rooms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right: Help -->
+        <div class="footer-help">
+          <h4>Help &amp; Support</h4>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-envelope"></i></span>
+            <span>gold.hotelpz@outlook.com</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-phone"></i></span>
+            <span>+383 49 156 178</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"
+              ><i class="fa-solid fa-location-dot"></i
+            ></span>
+            <span>Prizren, Kosova</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span class="bottom-line"></span>
+          <p>© 2026 Goldbase Hotel. All Rights Reserved</p>
+          <span class="bottom-line"></span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="thankyou-overlay">
+      <div class="thankyou-box">
+        <h2>Thank You!</h2>
+        <p>
+          Your booking request has been sent successfully.<br />
+          We will contact you via email to confirm your reservation.
+        </p>
+        <button id="closeThankYou">Back to Home</button>
+      </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+      const API_URL = "https://api.goldbasehotel.com/api/public/bookings";
+      const AVAILABILITY_URL =
+        "https://api.goldbasehotel.com/api/public/unavailable-dates";
+
+      const form = document.querySelector(".booking-form");
+      const btn = form.querySelector('button[type="submit"]');
+      const toastContainer = document.getElementById("toastContainer");
+
+      const roomInput = document.getElementById("room");
+      const checkinInput = document.getElementById("checkin");
+      const checkoutInput = document.getElementById("checkout");
+      const availabilityNote = document.getElementById("availabilityNote");
+
+      const notesInput = document.getElementById("notes");
+      const notesInfo = document.getElementById("notesInfo");
+
+      notesInput.addEventListener("input", () => {
+        const value = notesInput.value.trim();
+
+        if (value.length > 0) {
+          notesInfo.textContent =
+            "⚠️ Special requests may include extra charges.";
+        } else {
+          notesInfo.textContent = "";
+        }
+      });
+
+      let unavailableDates = [];
+      let isAvailabilityLoading = false;
+      let checkinPicker = null;
+      let checkoutPicker = null;
+
+      // ✅ Datat ruhen këtu, jo vetëm në input.value
+      let selectedCheckin = "";
+      let selectedCheckout = "";
+
+      const backendToInputId = {
+        check_in: "checkin",
+        check_out: "checkout",
+        adults: "adults",
+        children: "children",
+        room_type: "room",
+        full_name: "fullname",
+        email: "email",
+        phone: "phone",
+        special_requests: "notes",
+      };
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function setLoading(isLoading) {
+        btn.disabled = isLoading;
+        btn.style.opacity = isLoading ? "0.75" : "1";
+        btn.textContent = isLoading ? "Sending..." : "Book Now";
+      }
+
+      function mapRoomType(v) {
+        if (v === "standard") return "double";
+        if (v === "deluxe") return "twin";
+        if (v === "suite") return "triple";
+        return "double";
+      }
+
+      function showToast(message, type = "error") {
+        if (!toastContainer) return;
+
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+        toast.innerHTML = escapeHtml(message);
+
+        toastContainer.appendChild(toast);
+
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateX(40px)";
+          setTimeout(() => toast.remove(), 300);
+        }, 4500);
+      }
+
+      function ensureFieldErrorElements() {
+        const ids = Object.values(backendToInputId);
+        ids.forEach((id) => {
+          const input = document.getElementById(id);
+          if (!input) return;
+
+          const existing = document.getElementById("error-" + id);
+          if (existing) return;
+
+          const fieldWrap = input.closest(".field") || input.parentElement;
+          if (!fieldWrap) return;
+
+          const div = document.createElement("div");
+          div.className = "field-error";
+          div.id = "error-" + id;
+          fieldWrap.appendChild(div);
+        });
+      }
+
+      function clearFieldErrors() {
+        ensureFieldErrorElements();
+
+        form
+          .querySelectorAll(".field-error")
+          .forEach((el) => (el.textContent = ""));
+        form
+          .querySelectorAll("input, select, textarea")
+          .forEach((el) => el.classList.remove("error"));
+      }
+
+      function showFieldError(inputId, message) {
+        ensureFieldErrorElements();
+
+        const input = document.getElementById(inputId);
+        const err = document.getElementById("error-" + inputId);
+
+        if (input) input.classList.add("error");
+        if (err) err.textContent = message;
+      }
+
+      function clearFieldError(inputId) {
+        const input = document.getElementById(inputId);
+        const err = document.getElementById("error-" + inputId);
+
+        if (input) input.classList.remove("error");
+        if (err) err.textContent = "";
+      }
+
+      function scrollToFirstError() {
+        const first = form.querySelector(".error");
+        if (first) {
+          first.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+
+      function wireLiveClear() {
+        ensureFieldErrorElements();
+
+        const ids = Object.values(backendToInputId);
+        ids.forEach((id) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          const handler = () => {
+            if (id !== "checkin" && id !== "checkout") {
+              clearFieldError(id);
+            }
+          };
+
+          el.addEventListener("input", handler);
+          el.addEventListener("change", handler);
+          el.addEventListener("blur", handler);
+        });
+      }
+
+      function showThankYouModal() {
+        const modal = document.getElementById("thankYouModal");
+        if (modal) modal.style.display = "flex";
+      }
+
+      function hideThankYouModal() {
+        const modal = document.getElementById("thankYouModal");
+        if (modal) modal.style.display = "none";
+      }
+
+      document
+        .getElementById("closeThankYou")
+        ?.addEventListener("click", () => {
+          window.location.href = "index.html";
+        });
+
+      document
+        .getElementById("thankYouModal")
+        ?.addEventListener("click", (e) => {
+          if (e.target.id === "thankYouModal") hideThankYouModal();
+        });
+
+      async function readResponse(res) {
+        const text = await res.text();
+        if (!text) return {};
+        try {
+          return JSON.parse(text);
+        } catch {
+          return { message: text };
+        }
+      }
+
+      function fetchWithTimeout(url, options = {}, timeoutMs = 12000) {
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), timeoutMs);
+        return fetch(url, { ...options, signal: ctrl.signal }).finally(() =>
+          clearTimeout(t),
+        );
+      }
+
+      function formatDateYMD(dateObj) {
+        const yyyy = dateObj.getFullYear();
+        const mm = String(dateObj.getMonth() + 1).padStart(2, "0");
+        const dd = String(dateObj.getDate()).padStart(2, "0");
+        return `${yyyy}-${mm}-${dd}`;
+      }
+
+      function getTodayYMD() {
+        return formatDateYMD(new Date());
+      }
+
+      function updateAvailabilityNote(message, isError = false) {
+        if (!availabilityNote) return;
+        availabilityNote.textContent = message || "";
+        availabilityNote.style.color = isError ? "#d32f2f" : "#9e6200";
+      }
+
+      function selectedRangeContainsUnavailable(checkin, checkout) {
+        if (!checkin || !checkout) return false;
+
+        const start = new Date(checkin + "T00:00:00");
+        const end = new Date(checkout + "T00:00:00");
+        const current = new Date(start);
+
+        while (current < end) {
+          const dateKey = formatDateYMD(current);
+          if (unavailableDates.includes(dateKey)) {
+            return true;
+          }
+          current.setDate(current.getDate() + 1);
+        }
+
+        return false;
+      }
+
+      function refreshPickers() {
+        const today = getTodayYMD();
+
+        const currentCheckin = selectedCheckin || checkinInput.value;
+        const currentCheckout = selectedCheckout || checkoutInput.value;
+
+        if (checkinPicker) checkinPicker.destroy();
+        if (checkoutPicker) checkoutPicker.destroy();
+
+        checkinPicker = flatpickr("#checkin", {
+          disableMobile: true,
+          allowInput: false,
+          clickOpens: true,
+          dateFormat: "Y-m-d",
+          minDate: today,
+          disable: unavailableDates,
+          defaultDate: currentCheckin || null,
+          onChange: function (selectedDates, dateStr) {
+            selectedCheckin = dateStr || "";
+            checkinInput.value = dateStr || "";
+            clearFieldError("checkin");
+
+            if (checkoutPicker) {
+              checkoutPicker.set("minDate", dateStr || today);
+            }
+
+            const checkoutVal = selectedCheckout || checkoutInput.value;
+
+            if (dateStr && checkoutVal && checkoutVal <= dateStr) {
+              selectedCheckout = "";
+              checkoutInput.value = "";
+              checkoutPicker.clear();
+              showFieldError(
+                "checkout",
+                "Please select a check-out date after check-in.",
+              );
+            } else {
+              clearFieldError("checkout");
+            }
+
+            if (dateStr && unavailableDates.includes(dateStr)) {
+              selectedCheckin = "";
+              checkinInput.value = "";
+              checkinPicker.clear();
+              showFieldError("checkin", "This check-in date is not available.");
+            }
+          },
+        });
+
+        checkoutPicker = flatpickr("#checkout", {
+          disableMobile: true,
+          allowInput: false,
+          clickOpens: true,
+          dateFormat: "Y-m-d",
+          minDate: currentCheckin || today,
+          disable: unavailableDates,
+          defaultDate: currentCheckout || null,
+          onChange: function (selectedDates, dateStr) {
+            selectedCheckout = dateStr || "";
+            checkoutInput.value = dateStr || "";
+            clearFieldError("checkout");
+
+            const checkinVal = selectedCheckin || checkinInput.value;
+
+            if (dateStr && unavailableDates.includes(dateStr)) {
+              selectedCheckout = "";
+              checkoutInput.value = "";
+              checkoutPicker.clear();
+              showFieldError(
+                "checkout",
+                "This check-out date is not available.",
+              );
+              return;
+            }
+
+            if (checkinVal && dateStr && dateStr <= checkinVal) {
+              selectedCheckout = "";
+              checkoutInput.value = "";
+              checkoutPicker.clear();
+              showFieldError("checkout", "Check-out must be after check-in.");
+              return;
+            }
+
+            if (
+              checkinVal &&
+              dateStr &&
+              selectedRangeContainsUnavailable(checkinVal, dateStr)
+            ) {
+              selectedCheckout = "";
+              checkoutInput.value = "";
+              checkoutPicker.clear();
+              showFieldError(
+                "checkout",
+                "Some dates in your selected stay are not available for this room type.",
+              );
+            }
+          },
+        });
+
+        if (currentCheckin && !unavailableDates.includes(currentCheckin)) {
+          checkinPicker.setDate(currentCheckin, false);
+          selectedCheckin = currentCheckin;
+          checkinInput.value = currentCheckin;
+        }
+
+        if (
+          currentCheckout &&
+          currentCheckin &&
+          !selectedRangeContainsUnavailable(currentCheckin, currentCheckout)
+        ) {
+          checkoutPicker.setDate(currentCheckout, false);
+          selectedCheckout = currentCheckout;
+          checkoutInput.value = currentCheckout;
+        }
+      }
+
+      async function loadUnavailableDates() {
+        const roomType = mapRoomType(roomInput.value);
+
+        isAvailabilityLoading = true;
+        btn.disabled = true;
+
+        unavailableDates = [];
+        updateAvailabilityNote("");
+
+        try {
+          const res = await fetchWithTimeout(
+            `${AVAILABILITY_URL}?room_type=${encodeURIComponent(roomType)}`,
+            {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+              },
+            },
+            12000,
+          );
+
+          const data = await readResponse(res);
+
+          if (!res.ok || !data?.status) {
+            updateAvailabilityNote(
+              "We could not load availability right now. Please try again.",
+              true,
+            );
+            refreshPickers();
+            return;
+          }
+
+          unavailableDates = Array.isArray(data.dates) ? data.dates : [];
+          refreshPickers();
+
+          if (unavailableDates.length > 0) {
+            updateAvailabilityNote("");
+          } else {
+            // ❌ Mos shfaq asgjë në asnjë rast
+            updateAvailabilityNote("");
+          }
+
+          if (selectedCheckin && unavailableDates.includes(selectedCheckin)) {
+            selectedCheckin = "";
+            checkinInput.value = "";
+            if (checkinPicker) checkinPicker.clear();
+            showFieldError(
+              "checkin",
+              "This check-in date is not available for the selected room.",
+            );
+          }
+
+          if (
+            selectedCheckin &&
+            selectedCheckout &&
+            selectedRangeContainsUnavailable(selectedCheckin, selectedCheckout)
+          ) {
+            selectedCheckout = "";
+            checkoutInput.value = "";
+            if (checkoutPicker) checkoutPicker.clear();
+            showFieldError(
+              "checkout",
+              "Your previously selected stay is not available for this room type.",
+            );
+          }
+        } catch (error) {
+          console.error("Failed to load unavailable dates:", error);
+          updateAvailabilityNote(
+            "We could not load availability right now. Please try again.",
+            true,
+          );
+          refreshPickers();
+        } finally {
+          isAvailabilityLoading = false;
+          btn.disabled = false;
+        }
+      }
+
+      function validateSelectedDatesBeforeSubmit(payload) {
+        let hasError = false;
+
+        if (!payload.check_in) {
+          showFieldError("checkin", "Please select check-in date.");
+          hasError = true;
+        }
+
+        if (!payload.check_out) {
+          showFieldError("checkout", "Please select check-out date.");
+          hasError = true;
+        }
+
+        if (
+          payload.check_in &&
+          payload.check_out &&
+          payload.check_out <= payload.check_in
+        ) {
+          showFieldError("checkout", "Check-out must be after check-in.");
+          hasError = true;
+        }
+
+        if (payload.check_in && unavailableDates.includes(payload.check_in)) {
+          showFieldError("checkin", "This check-in date is not available.");
+          hasError = true;
+        }
+
+        if (
+          payload.check_in &&
+          payload.check_out &&
+          selectedRangeContainsUnavailable(payload.check_in, payload.check_out)
+        ) {
+          showFieldError(
+            "checkout",
+            "Some dates in your selected stay are not available for this room type.",
+          );
+          hasError = true;
+        }
+
+        return hasError;
+      }
+
+      ensureFieldErrorElements();
+      wireLiveClear();
+      refreshPickers();
+      loadUnavailableDates();
+
+      roomInput.addEventListener("change", async () => {
+        clearFieldError("room");
+        clearFieldError("checkin");
+        clearFieldError("checkout");
+
+        selectedCheckin = "";
+        selectedCheckout = "";
+
+        if (checkinPicker) checkinPicker.clear();
+        if (checkoutPicker) checkoutPicker.clear();
+
+        checkinInput.value = "";
+        checkoutInput.value = "";
+
+        await loadUnavailableDates();
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (isAvailabilityLoading) {
+          showToast(
+            "Please wait a moment while availability is being checked.",
+            "error",
+          );
+          return;
+        }
+
+        clearFieldErrors();
+
+        const payload = {
+          check_in: selectedCheckin || checkinInput.value,
+          check_out: selectedCheckout || checkoutInput.value,
+          adults: Number(document.getElementById("adults").value),
+          children: Number(document.getElementById("children").value),
+          room_type: mapRoomType(roomInput.value),
+          full_name: document.getElementById("fullname").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          phone: document.getElementById("phone").value.trim() || null,
+          special_requests:
+            document.getElementById("notes").value.trim() || null,
+          website: (document.getElementById("website")?.value || "").trim(),
+        };
+
+        let hasError = false;
+
+        hasError = validateSelectedDatesBeforeSubmit(payload);
+
+        if (!payload.full_name) {
+          showFieldError("fullname", "Full name is required.");
+          hasError = true;
+        }
+
+        if (!payload.email) {
+          showFieldError("email", "Email is required.");
+          hasError = true;
+        }
+
+        if (!payload.phone) {
+          showFieldError("phone", "Phone number is required.");
+          hasError = true;
+        } else {
+          const phoneClean = payload.phone.replace(/\s+/g, "");
+          const phoneRegex = /^[+0-9]{6,20}$/;
+          if (!phoneRegex.test(phoneClean)) {
+            showFieldError("phone", "Please enter a valid phone number.");
+            hasError = true;
+          }
+        }
+
+        if (hasError) {
+          scrollToFirstError();
+          return;
+        }
+
+        try {
+          setLoading(true);
+
+          const res = await fetchWithTimeout(
+            API_URL,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              body: JSON.stringify(payload),
+            },
+            12000,
+          );
+
+          const data = await readResponse(res);
+
+          if (res.ok) {
+            form.reset();
+            clearFieldErrors();
+
+            selectedCheckin = "";
+            selectedCheckout = "";
+
+            if (checkinPicker) checkinPicker.clear();
+            if (checkoutPicker) checkoutPicker.clear();
+
+            checkinInput.value = "";
+            checkoutInput.value = "";
+
+            await loadUnavailableDates();
+            showThankYouModal();
+            return;
+          }
+
+          if (res.status === 422) {
+            clearFieldErrors();
+
+            if (data?.errors && typeof data.errors === "object") {
+              for (const key of Object.keys(data.errors)) {
+                const inputId = backendToInputId[key];
+                const firstMsg = data.errors[key]?.[0];
+                if (inputId && firstMsg) showFieldError(inputId, firstMsg);
+              }
+              scrollToFirstError();
+              return;
+            }
+
+            showToast(
+              "Please check the highlighted fields and try again.",
+              "error",
+            );
+            return;
+          }
+
+          if (res.status === 429) {
+            showToast(
+              "Too many attempts. Please wait a moment and try again.",
+              "error",
+            );
+            return;
+          }
+
+          if (res.status >= 500) {
+            showToast(
+              "We are having temporary technical issues. Please try again shortly.",
+              "error",
+            );
+            return;
+          }
+
+          if (data?.message) {
+            showToast(data.message, "error");
+            return;
+          }
+
+          showToast("Something went wrong. Please try again.", "error");
+        } catch (err) {
+          console.error(err);
+
+          if (err?.name === "AbortError") {
+            showToast(
+              "The request is taking too long. Please try again.",
+              "error",
+            );
+            return;
+          }
+
+          showToast(
+            "We are having temporary technical issues. Please try again shortly.",
+            "error",
+          );
+        } finally {
+          setLoading(false);
+        }
+      });
+    </script>
+  </body>
+</html>

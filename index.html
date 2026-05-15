@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoldBase Hotel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <text x='50%' y='60%' font-size='60' text-anchor='middle' fill='%23D4AF37' font-family='Arial' font-weight='bold'>GB</text>
+</svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container header-content">
+        <!-- Logo -->
+        <a class="logo" href="index.html" aria-label="GoldBase Hotel Home">
+          <img src="assets/images/logo.png" alt="GoldBase Hotel" />
+        </a>
+
+        <!-- Navigation -->
+        <!-- Navigation -->
+        <div class="nav-wrap">
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+          <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav class="nav" aria-label="Main Navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="book.html">Book Now</a>
+            <a href="#rooms">Rooms</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content hero-anim">
+        <h1>Welcome to <span>GoldBase</span></h1>
+        <p>Experience Luxury & Comfort</p>
+        <a href="book.html" class="btn-gold">Book Now</a>
+      </div>
+    </section>
+
+    <!-- ===== OUR STORY ===== -->
+    <section class="story" id="story">
+      <div class="container story-grid stagger">
+        <!-- LEFT: IMAGE + FLOAT CARD -->
+        <div class="story-media">
+          <img
+            class="story-img"
+            src="assets/images/breakfast.jpg"
+            alt="Breakfast at GoldBase Hotel"
+          />
+
+          <div class="story-card">
+            <p>
+              Enjoy a fresh and delicious breakfast every morning — the perfect
+              start to your stay with us.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT: TEXT + FEATURES -->
+        <div class="story-info">
+          <div class="story-label">
+            <span>OUR STORY</span>
+            <span class="story-line"></span>
+          </div>
+
+          <h2 class="story-title">Exceptional Food &amp; Comfort</h2>
+
+          <p class="story-text">
+            Located in Prizren, our hotel welcomes travelers from around the
+            world, offering comfort, quality service, and a warm stay in the
+            heart of the city.
+          </p>
+
+          <div class="story-features">
+            <div class="features-row">
+              <div class="feature">
+                <span class="icon gold" aria-hidden="true">
+                  <!-- simple breakfast icon -->
+                  <i class="fa-solid fa-mug-hot"></i>
+                </span>
+                <span>Fresh Breakfast</span>
+              </div>
+
+              <div class="feature">
+                <span class="icon gold" aria-hidden="true">
+                  <!-- bed icon -->
+                  <i class="fa-solid fa-bed"></i>
+                </span>
+                <span>Comfortable Rooms</span>
+              </div>
+            </div>
+
+            <div class="feature feature-center">
+              <span class="feature-line"></span>
+
+              <span class="icon pin" aria-hidden="true">
+                <!-- pin icon -->
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+
+              <span>Central Location</span>
+
+              <span class="feature-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OUR ROOMS ===== -->
+    <section class="rooms" id="rooms">
+      <div class="container">
+        <div class="rooms-heading">
+          <div class="rooms-title-row">
+            <span class="title-line"></span>
+            <h2>Our Rooms</h2>
+            <span class="title-line"></span>
+          </div>
+
+          <div class="rooms-subtitle-row">
+            <span class="sub-line"></span>
+            <p>Comfort for every guest</p>
+            <span class="sub-line"></span>
+          </div>
+        </div>
+
+        <div class="rooms-grid stagger">
+          <!-- Card 1 -->
+          <article class="room-card">
+            <div class="room-img">
+              <img src="assets/images/room-1.jpg" alt="Double Room" />
+            </div>
+
+            <div class="room-body">
+              <h3 class="room-name">Double Room</h3>
+              <div class="room-divider"></div>
+              <p class="room-desc">Perfect for two guests</p>
+
+              <div class="room-icons">
+                <!-- wifi -->
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-wifi"></i>
+                </span>
+
+                <!-- bed -->
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-bed"></i>
+                </span>
+
+                <!-- parking (P) -->
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-square-parking"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="room-card">
+            <div class="room-img">
+              <img src="assets/images/room-2.jpg" alt="Family Room" />
+            </div>
+
+            <div class="room-body">
+              <h3 class="room-name">Twin Room</h3>
+              <div class="room-divider"></div>
+              <p class="room-desc">Perfect for two guests</p>
+
+              <div class="room-icons">
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-wifi"></i>
+                </span>
+
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-bed"></i>
+                </span>
+
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-square-parking"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="room-card">
+            <div class="room-img">
+              <img src="assets/images/room-3.jpg" alt="Triple Room" />
+            </div>
+
+            <div class="room-body">
+              <h3 class="room-name">Triple Room</h3>
+              <div class="room-divider"></div>
+              <p class="room-desc">Perfect for two guests</p>
+
+              <div class="room-icons">
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-wifi"></i>
+                </span>
+
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-bed"></i>
+                </span>
+
+                <span class="room-icon" aria-hidden="true">
+                  <i class="fa-solid fa-square-parking"></i>
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Left: Logo + Social -->
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="assets/images/logo.png"
+            alt="GoldBase Hotel"
+          />
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Explore -->
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="book.html">Book Now</a>
+          <a href="index.html#rooms">Our Rooms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right: Help -->
+        <div class="footer-help">
+          <h4>Help &amp; Support</h4>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-envelope"></i></span>
+            <span>gold.hotelpz@outlook.com</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-phone"></i></span>
+            <span>+383 49 156 178</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"
+              ><i class="fa-solid fa-location-dot"></i
+            ></span>
+            <span>Prizren, Kosova</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span class="bottom-line"></span>
+          <p>© 2026 Goldbase Hotel. All Rights Reserved</p>
+          <span class="bottom-line"></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

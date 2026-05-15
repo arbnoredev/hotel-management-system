@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoldBase Hotel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+  <text x='50%' y='60%' font-size='60' text-anchor='middle' fill='%23D4AF37' font-family='Arial' font-weight='bold'>GB</text>
+</svg>"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+      <div class="container header-content">
+        <!-- Logo -->
+        <a class="logo" href="index.html" aria-label="GoldBase Hotel Home">
+          <img src="assets/images/logo.png" alt="GoldBase Hotel" />
+        </a>
+
+        <!-- Navigation -->
+        <!-- Navigation -->
+        <div class="nav-wrap">
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+          <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav class="nav" aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="book.html">Book Now</a>
+            <a href="index.html#rooms">Rooms</a>
+            <a href="contact.html" class="active">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO / PAGE TITLE -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="title-row">
+          <span class="title-line"></span>
+          <h1>Contact Us</h1>
+          <span class="title-line"></span>
+        </div>
+        <p class="subtitle">
+          We’re here to help. Send a message or reach us directly via phone &
+          email.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN CONTACT -->
+    <main class="contact">
+      <div class="container contact-grid">
+        <!-- FORM CARD -->
+        <section class="card form-card" aria-label="Contact form">
+          <h2 class="card-title">Send a Message</h2>
+          <p class="card-text">We usually reply within 24 hours.</p>
+
+          <form class="form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+383 ..."
+                />
+              </div>
+
+              <div class="field">
+                <label for="subject">Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  placeholder="Reservation / Info / Other"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message..."
+                required
+              ></textarea>
+            </div>
+
+            <div
+              style="
+                position: absolute;
+                left: -9999px;
+                height: 0;
+                overflow: hidden;
+              "
+            >
+              <label for="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                autocomplete="off"
+                tabindex="-1"
+              />
+            </div>
+
+            <button class="btn-primary" type="submit">Send Message</button>
+          </form>
+        </section>
+
+        <!-- INFO CARD -->
+        <aside class="card info-card" aria-label="Contact details">
+          <h2 class="card-title">Contact Details</h2>
+          <p class="card-text">
+            Feel free to reach us any time during business hours.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-label">Phone</span>
+              <a class="info-value" href="tel:+38300000000">+383 49 156 178</a>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <a class="info-value" href="mailto:gold.hotelpz@outlook.com">
+                gold.hotelpz@outlook.com
+              </a>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Address</span>
+              <span class="info-value">Prizren, Kosovo</span>
+            </div>
+
+            <div class="info-item">
+              <span class="info-label">Working Hours</span>
+              <span class="info-value">Mon – Sun: 08:00 – 22:00</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- MAP – FULL WIDTH -->
+        <section class="contact-map">
+          <div class="map-card">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d377886.14836141857!2d20.40970272323981!3d42.273495305530105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13539507406d7b9b%3A0x1241c053d3f00579!2sHotel%20Gold!5e0!3m2!1sen!2s!4v1768258899209!5m2!1sen!2s"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <!-- Left: Logo + Social -->
+        <div class="footer-brand">
+          <img
+            class="footer-logo"
+            src="assets/images/logo.png"
+            alt="GoldBase Hotel"
+          />
+
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" aria-label="Instagram" class="social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Explore -->
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="book.html">Book Now</a>
+          <a href="index.html#rooms">Our Rooms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Right: Help -->
+        <div class="footer-help">
+          <h4>Help &amp; Support</h4>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-envelope"></i></span>
+            <span>gold.hotelpz@outlook.com</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"><i class="fa-solid fa-phone"></i></span>
+            <span>+383 49 156 178</span>
+          </div>
+
+          <div class="help-item">
+            <span class="help-icon"
+              ><i class="fa-solid fa-location-dot"></i
+            ></span>
+            <span>Prizren, Kosova</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <span class="bottom-line"></span>
+          <p>© 2026 Goldbase Hotel. All Rights Reserved</p>
+          <span class="bottom-line"></span>
+        </div>
+      </div>
+    </footer>
+
+    <div id="contactThankYou" class="thankyou-overlay">
+      <div class="thankyou-box">
+        <h2>Thank You!</h2>
+        <p>
+          Your message has been sent successfully.<br />
+          We will reply within 24 hours.
+        </p>
+        <button id="closeContactThankYou">Back to Home</button>
+      </div>
+    </div>
+
+    <script>
+      const CONTACT_API_URL =
+        "https://api.goldbasehotel.com/api/public/contact";
+
+      const contactForm = document.querySelector(".form");
+      const sendBtn = contactForm.querySelector('button[type="submit"]');
+
+      function setSending(isSending) {
+        sendBtn.disabled = isSending;
+        sendBtn.style.opacity = isSending ? "0.75" : "1";
+        sendBtn.textContent = isSending ? "Sending..." : "Send Message";
+      }
+
+      function showContactModal() {
+        const m = document.getElementById("contactThankYou");
+        if (m) m.style.display = "flex";
+      }
+
+      document
+        .getElementById("closeContactThankYou")
+        ?.addEventListener("click", () => {
+          window.location.href = "index.html";
+        });
+
+      document
+        .getElementById("contactThankYou")
+        ?.addEventListener("click", (e) => {
+          if (e.target.id === "contactThankYou") {
+            // klik jashtë -> mbyll
+            e.currentTarget.style.display = "none";
+          }
+        });
+
+      async function readResponse(res) {
+        const text = await res.text();
+        if (!text) return {};
+        try {
+          return JSON.parse(text);
+        } catch {
+          return { message: text };
+        }
+      }
+
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const payload = {
+          name: document.getElementById("name").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          phone: document.getElementById("phone").value.trim() || null,
+          subject: document.getElementById("subject").value.trim(),
+          message: document.getElementById("message").value.trim(),
+          website: (document.getElementById("website")?.value || "").trim(), // honeypot
+        };
+
+        try {
+          setSending(true);
+
+          const res = await fetch(CONTACT_API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await readResponse(res);
+
+          if (res.ok) {
+            contactForm.reset();
+            showContactModal();
+            return;
+          }
+
+          alert(data?.message || "Something went wrong. Please try again.");
+        } catch (err) {
+          console.error(err);
+          alert(
+            "We are having temporary technical issues. Please try again shortly.",
+          );
+        } finally {
+          setSending(false);
+        }
+      });
+    </script>
+  </body>
+</html>
